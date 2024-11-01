@@ -1,0 +1,35 @@
+{
+	"version":"9.3.2016-KM",
+	"ui":{
+		"balance":"余额",
+		"wager":"单注金额",
+		"demo":"演示",
+		"wins":"奖励",
+		"demoWins":"演示奖励",
+		"buy":"购买",
+		"try":"试玩",
+		"drawOne":"扔球",
+		"drawAll":"自动扔球",
+		"exit":"退出",
+		"playForMoney":"现金游戏"
+	},
+	"game":{
+		"ticketCostPlaqueText":"请选择 \n单注的金额并点击 \"购买\"",
+		"ticketCostPlaqueTextTry":"请选择 \n单注的金额并点击 \"试玩\"",
+		"bonusPlaqueText":"试着吵醒一只\n酣睡的猴子\n并从它那里获得奖励!"
+	},
+	"help":{
+		"title":"规则说明",
+		"txt3":"当球落到了正中的木板时 \n你将获得一次奖励游戏.",
+		"txt2":"当任意颜色香蕉的3个阶段被全部点亮时\n即可赢得奖金.",
+		"txt":"点击移动中的猴子或是扔球按钮\n将球扔到下方的木板中.\n你拥有7次机会."
+	},
+	"result":{
+		"winText":"恭喜你! \n你赢得了",
+		"demoWinText":"恭喜你! \n你将赢得",
+		"sorry":"很遗憾,你没有获得奖励. \n\n祝你下次好运"
+	},
+	"error":{
+		"errorCode":"错误代码: {0}\n\n{1}\n\n{2}"
+	}
+}

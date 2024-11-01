@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="html-client-builder" basedir="." default="build" xmlns:artifact="antlib:org.apache.maven.artifact.ant"> 
+	<property environment="env"/>
+	<property file="build.properties"/>
+	<property name="GLEConfig.file" location="${basedir}/../../../GLEConfig.xml"/>
+	
+	<condition property="env.NEXUS_ROOT" value="http://igti-nexus.lab.wagerworks.com/content/groups/public">
+		<not>
+			<isset property="env.NEXUS_ROOT"/>
+		</not>
+	</condition>
+
+	<path id="maven-ant-tasks.classpath" path="${env.EXTERNAL_LIB}/ant_lib/maven-ant-tasks-2.1.3.jar" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+		   uri="antlib:org.apache.maven.artifact.ant"
+		   classpathref="maven-ant-tasks.classpath"
+		   reverseLoader="true"/>
+	<artifact:remoteRepository id="remote" url="${env.NEXUS_ROOT}"/>
+	<artifact:pom id="pom" file="${build.dir}/pom.xml" />
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpath="${env.EXTERNAL_LIB}/ant_lib/ant-contrib-1.0b1.jar"/>
+	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" classpath="${env.EXTERNAL_LIB}/ant_lib/xmltask.jar"/>
+
+	<basename property="folder" file="."/>
+	<propertyregex property="channel"
+		input="${folder}"
+		regexp="(.*)-(.*)"
+		select="\1" />
+
+	<propertyregex property="presentation"
+          input="${folder}"
+          regexp="(.*)-(.*)"
+          select="\2" />
+
+	<xmltask source="${GLEConfig.file}">
+		<copy property="gamefoldername" path="//channel[@name='${channel}']/presentation[@name='${presentation}']/@gameFolder"/>
+		<copy property="studio" path="//family/@studio"/>
+		<copy property="clientversion" path="//channel[@name='${channel}']/presentation[@name='${presentation}']/@clientversion"/>
+	</xmltask>
+
+	<property name="release.deploy.dir" location="${deploy.dir}/release/apache/htdocs/app/studios/${studio}/games/${gamefoldername}"/>
+	<property name="debug.deploy.dir" location="${deploy.dir}/debug/apache/htdocs/app/studios/${studio}/games/${gamefoldername}"/>
+	<property name="local.deploy.dir" location="${env.IGDK_HOME}/www"/>
+	<property name="local.launcher.dir" location="${local.deploy.dir}/Launcher"/>
+
+	<target name="setup-env">
+		
+	</target>
+
+	<target name="get-launcher">
+		
+	</target>
+
+	<target name="get-dependencies">
+		<antcall target="get-dependencies-release"/>
+		<antcall target="get-dependencies-debug"/>
+	</target>
+
+	<target name="get-dependencies-release" unless="debug">
+		
+	</target>
+
+	<target name="get-dependencies-debug" if="debug">
+		
+	</target>
+
+	<target name="clean">
+		
+	</target>
+
+	<target name="package" depends="build">
+		<antcall target="package-release"/>
+		<antcall target="package-debug"/>
+	</target>
+
+	<target name="package-release">
+		
+	</target>
+	
+	<target name="package-debug">
+		
+	</target>
+
+	<target name="build" depends="setup-env,get-dependencies">
+		<echo message="[${studio}] Building ${gamefoldername}..."/>
+		<mkdir dir="${release.deploy.dir}"/>
+		<fcopy-assets from="." to="${release.deploy.dir}"/>
+		<antcall target="create-version-json"/>
+		<antcall target="build-game-local"/>
+	</target>
+
+	<target name="create-version-json">
+		<delete file="${debug.deploy.dir}/version.json"/>
+		<delete file="${release.deploy.dir}/version.json"/>
+		<echo message="{&quot;gameClientVersion&quot;: &quot;${clientversion}-debug&quot;}" file="${debug.deploy.dir}/version.json" append="false"/>
+		<echo message="{&quot;gameClientVersion&quot;: &quot;${clientversion}&quot;}" file="${release.deploy.dir}/version.json" append="false"/>
+	</target>
+
+	<target name="build-game-local" if="env.IGDK_HOME" unless="env.IGDK_NOLOCALBUILD">
+		<antcall target="get-launcher"/>
+		<antcall target="deploy-local"/>
+		<antcall target="build-gamedebug"/>
+		<!--antcall target="open-launcher"/-->
+	</target>
+
+	<target name="build-gamedebug" if="gameDebugExists">
+
+	</target>
+
+	<target name="deploy-local" if="local-deploy-exists">
+		<mkdir dir="${local.deploy.dir}/studios/${studio}/games/${gamefoldername}"/>
+
+		<fcopy-assets from="." to="${local.deploy.dir}/studios/${studio}/games/${gamefoldername}"/>
+		<copy todir="${local.deploy.dir}/studios/${studio}/games/${gamefoldername}/bin" overwrite="true">
+			<fileset dir="${debug.deploy.dir}/bin/">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="open-launcher" unless="env.IGDK_DONOTLAUNCH">
+		<property name="url" location="${local.launcher.dir}/bin/Launcher.html"/>
+		<exec executable="cmd" osfamily="windows">
+			<arg line="/c"/>
+			<arg line="start"/>
+			<arg line="${url}"/>
+		</exec>
+		<exec executable="open" osfamily="mac">
+			<arg line="${url}"/>
+		</exec>
+	</target>
+
+	<macrodef name="fcopy-assets">
+		<attribute name="from"/>
+		<attribute name="to"/>
+		<sequential>
+			<copy todir="@{to}" failonerror="true" overwrite="true">
+				<fileset dir="@{from}">
+					<include name="**/*.htm*"/>
+					<include name="**/*.js"/>
+					<include name="**/*.xml"/>
+					<include name="**/*.css"/>
+					<include name="**/*.json"/>
+					<include name="**/*.mp3"/>
+					<include name="**/*.jpeg"/>
+					<include name="**/*.jpg"/>
+					<include name="**/*.png"/>
+					<include name="**/*.txt"/>
+					<include name="assets/help/**/*.htm*"/>
+					<exclude name="**/data/**/*.xml"/>
+					<exclude name="**/src/**/*"/>
+					<exclude name="**/assembly-*.xml"/>
+					<exclude name="**/build.xml"/>
+					<exclude name="**/pom.xml"/>
+				</fileset>
+			</copy>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="build-debug-game-module">
+		<attribute name="src"/>
+		<attribute name="bin"/>
+		<sequential>
+			
+		</sequential>
+	</macrodef>
+	<macrodef name="build-game-module">
+		<attribute name="src"/>
+		<attribute name="bin"/>
+		<sequential>
+			
+		</sequential>
+	</macrodef>
+</project>

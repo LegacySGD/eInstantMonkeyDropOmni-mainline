@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation language="fi">
+<phrase key="softwareId" value="Ohjelmistotunnus"/>
+<phrase key="transactionId" value="Siirtotunnus"/>
+<phrase key="totalWins" value="Kokonaisvoitot"/>
+<phrase key="totalWager" value="Kokonaispanos"/>
+<phrase key="bingoCardNumbers" value="Bingokorttinumerot"/>
+<phrase key="drawnNumbers" value="Arvotut numerot"/>
+<phrase key="prizePatterns" value="Palkintokuviot"/>
+<phrase key="youMatched" value="Täsmäsit"/>
+<phrase key="freeSpace" value="ILMAINEN"/>
+<phrase key="winsPerPattern" value="Voittoja kuvioita kohden"/>
+<phrase key="pots" value=""/>
+<phrase key="count" value=""/>
+<phrase key="instantWin" value=""/>
+<phrase key="attachedPrize" value=""/>
+<phrase key="none" value=""/>
+<phrase key="instantWin1" value=""/>
+<phrase key="instantWin2" value=""/>
+<phrase key="instantWin3" value=""/>
+</translation>

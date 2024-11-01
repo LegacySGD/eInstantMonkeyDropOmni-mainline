@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation language="fr">
+<phrase key="softwareId" value="ID logiciel"/>
+<phrase key="transactionId" value="ID de transaction"/>
+<phrase key="totalWins" value="Total des victoires"/>
+<phrase key="totalWager" value="Mise totale"/>
+<phrase key="bingoCardNumbers" value="Numéros de la grille"/>
+<phrase key="drawnNumbers" value="Numéros tirés"/>
+<phrase key="prizePatterns" value="Modèles gagnants"/>
+<phrase key="youMatched" value="Modèle obtenu"/>
+<phrase key="freeSpace" value="GRATUIT"/>
+<phrase key="winsPerPattern" value="Gains par modèle"/>
+<phrase key="pots" value="Pots de récompense"/>
+<phrase key="count" value="Nombre de tirages"/>
+<phrase key="instantWin" value="Gain immédiat"/>
+<phrase key="attachedPrize" value="Prix associé"/>
+<phrase key="none" value="Aucun(e)"/>
+<phrase key="instantWin1" value="Gain instantané 1"/>
+<phrase key="instantWin2" value="Sofortgewinn 2"/>
+<phrase key="instantWin3" value="Sofortgewinn 3"/>
+</translation>

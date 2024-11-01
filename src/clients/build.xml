@@ -1,0 +1,22 @@
+<project name="rgs-client-package" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant" default="package">
+	<property file="build.properties"/>
+
+	<target name="build">
+		<antcall target="package"/>
+	</target>
+
+	<target name="package">
+		<antcall target="package-clients"/>
+	</target>
+
+	<target name="package-clients">
+		<subant failonerror="true">
+			<fileset dir="${basedir}" includes="**/build.xml" excludes="build.xml"/>
+			<property name="project.name" value="${project.name}"/>
+			<!--property name="env.EXTERNAL_LIB" location="${env.EXTERNAL_LIB}"/-->
+			<property name="debug" value="${debug}"/>
+			<property name="nolocal" value="${nolocal}"/>
+			<property name="donotlaunch" value="${donotlaunch}"/>
+		</subant>
+	</target>
+</project>

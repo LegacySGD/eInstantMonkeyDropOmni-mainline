@@ -1,0 +1,5 @@
+<ClientConfig>    
+    <GameClient name="Monkey Drop" clientCode="mobile" technology="HTML" height="768" width="1024" meterheight="0" meterwidth="10" gameFolder="MonkeyDropUI2" enableFreeSpin="N" clientversion="0.0" gameId="300-9010-1"/>
+	<GameClient name="Monkey Drop" clientCode="tablet" technology="HTML" height="768" width="1024" meterheight="0" meterwidth="10" gameFolder="MonkeyDropUI2" enableFreeSpin="N" clientversion="0.0" gameId="300-9010-1"/>
+	<GameClient name="Monkey Drop" clientCode="desktop" technology="HTML" height="768" width="1024" meterheight="0" meterwidth="10" gameFolder="MonkeyDropUI2" enableFreeSpin="N" clientversion="0.0" gameId="300-9010-1"/>
+</ClientConfig>

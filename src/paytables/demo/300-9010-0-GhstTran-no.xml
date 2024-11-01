@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation language="no">
+<phrase key="softwareId" value="Programvare-ID"/>
+<phrase key="transactionId" value="Transaksjons-ID"/>
+<phrase key="totalWins" value="Samlet gevinst"/>
+<phrase key="totalWager" value="Samlet innsats"/>
+<phrase key="bingoCardNumbers" value="Bingobrett-tall"/>
+<phrase key="drawnNumbers" value="Trekte tall"/>
+<phrase key="prizePatterns" value="Premiemønster"/>
+<phrase key="youMatched" value="Du matchet"/>
+<phrase key="freeSpace" value="GRATIS"/>
+<phrase key="winsPerPattern" value="Gevinster per mønster"/>
+<phrase key="pots" value="Premiepotter"/>
+<phrase key="count" value="Antall trekk"/>
+<phrase key="instantWin" value="Umiddelbar gevinst"/>
+<phrase key="attachedPrize" value="Tilknyttet premie"/>
+<phrase key="none" value="Ingen"/>
+<phrase key="instantWin1" value="Umiddelbar gevinst 1"/>
+<phrase key="instantWin2" value="Pikavoitto 2"/>
+<phrase key="instantWin3" value="Pikavoitto 3"/>
+</translation>

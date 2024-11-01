@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation language="it">
+<phrase key="softwareId" value="ID Software"/>
+<phrase key="transactionId" value="ID transazione"/>
+<phrase key="totalWins" value="Vincite totali"/>
+<phrase key="totalWager" value="Puntata totale"/>
+<phrase key="bingoCardNumbers" value="Numeri Cartella Bingo"/>
+<phrase key="drawnNumbers" value="Numeri Estratti"/>
+<phrase key="prizePatterns" value="Modelli di Vincita"/>
+<phrase key="youMatched" value="Hai ottenuto"/>
+<phrase key="freeSpace" value="GRATIS"/>
+<phrase key="winsPerPattern" value="Vincite Per Modello"/>
+<phrase key="pots" value="Premi"/>
+<phrase key="count" value="Numero di lanci"/>
+<phrase key="instantWin" value="Vincita Istantanea"/>
+<phrase key="attachedPrize" value="Premio correlato"/>
+<phrase key="none" value="Nessuno"/>
+<phrase key="instantWin1" value="Vincita immediata 1"/>
+<phrase key="instantWin2" value="Premio instantáneo 2"/>
+<phrase key="instantWin3" value="Premio instantáneo 3"/>
+</translation>

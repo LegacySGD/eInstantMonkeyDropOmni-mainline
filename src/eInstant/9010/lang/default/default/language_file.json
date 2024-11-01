@@ -1,0 +1,35 @@
+{
+	"version":"9.3.2016-KM",
+	"ui":{
+		"balance":"BALANCE",
+		"wager":"TICKET COST",
+		"demo":"DEMO ",
+		"wins":"WIN",
+		"demoWins":"DEMO WIN",
+		"buy":"BUY",
+		"try":"TRY",
+		"drawOne":"DROP",
+		"drawAll":"DRAW ALL",
+		"exit":"EXIT",
+		"playForMoney":"PLAY FOR MONEY"
+	},
+	"game":{
+		"ticketCostPlaqueText":"Please choose your \nticket cost and press \"BUY\"",
+		"ticketCostPlaqueTextTry":"Please choose your \nticket cost and press \"TRY\"",
+		"bonusPlaqueText":"Wake one of the \nsleeping monkeys \nto reveal a prize!"
+	},
+	"help":{
+		"title":"HOW TO PLAY",
+		"txt3":"If the ball finishes in the middle \nbox you are taken to the \nbonus game.",
+		"txt2":"Light up 3 banana segments to\nwin that prize.",
+		"txt":"Press the monkey to get him to \nrelease the ball into the board.\nYou have 7 balls to drop."
+	},
+	"result":{
+		"winText":"CONGRATULATIONS! \nYOU HAVE WON",
+		"demoWinText":"CONGRATULATIONS! \nYOU COULD HAVE WON",
+		"sorry":"SORRY, YOU HAVE NOT WON. \n\nBETTER LUCK NEXT TIME"
+	},
+	"error":{
+		"errorCode":"ERROR CODE: {0}\n\n{1}\n\n{2}"
+	}
+}
